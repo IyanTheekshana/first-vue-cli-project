@@ -2,14 +2,12 @@
   <header><h1>My Friends</h1></header>
   <ul>
     <friend-contact
-      name="Mamuel"
-      phone-number="01234567890"
-      email-address="manuel@localhost.it"
-    ></friend-contact>
-    <friend-contact
-      name="John"
-      phone-number="01234567890"
-      email-address="john@localhost.it"
+      v-for="friend in friends"
+      :key="friend.id"
+      :name="friend.name"
+      :phone-number="friend.phone"
+      :email-address="friend.email"
+      v-bind:is-favorite="true"
     ></friend-contact>
   </ul>
 </template>
@@ -30,6 +28,12 @@ export default {
           name: "John Cena",
           phone: "01234567891",
           email: "john@localhost.it",
+        },
+        {
+          id: "Theekshana",
+          name: "Iyan Theekshana",
+          phone: "01234567891",
+          email: "theekshana@localhost.it",
         },
       ],
     };
